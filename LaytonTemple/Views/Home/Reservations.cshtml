@@ -1,0 +1,30 @@
+﻿@{
+}
+@model List<TourGroup>
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <td>Time Slot</td>
+            <td>Group Name</td>
+            <td>Group Size</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var apt in Model)
+        {
+            <tr>
+                <td>@apt.Timeslot</td>
+                <td>@apt.Name</td>
+                <td>@apt.Size</td>
+                <td>@apt.Email</td>
+                <td>@apt.Phone</td>
+                <td><a asp-controller="Home" asp-action="Edit" asp-route-groupid="@apt.GroupId">Edit</a></td>
+                <td><a asp-controller="Home" asp-action="Delete" asp-route-groupid="@apt.GroupId">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
