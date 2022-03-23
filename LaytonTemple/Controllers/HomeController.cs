@@ -50,7 +50,7 @@ namespace LaytonTemple.Controllers
 
         public IActionResult Reservations()
         {
-            var resList = blahContext.TourGroup.OrderBy(x => x.Timeslot).ToList();
+            var resList = blahContext.TourGroup.ToList();
             return View(resList);
         }
 
